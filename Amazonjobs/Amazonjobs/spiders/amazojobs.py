@@ -7,7 +7,7 @@ from scrapy import signals, Request;                      #pip3 install beautifu
 class AmazonJobsSpider(scrapy.Spider):
     name = "amazonjobs"
 
-    pages_count =25;
+    pages_count =70;
     url_count=10;
 
     job_details=[];
