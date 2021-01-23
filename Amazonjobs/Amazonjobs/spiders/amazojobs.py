@@ -1,15 +1,17 @@
 import scrapy
-from bs4 import BeautifulSoup 
+from bs4 import BeautifulSoup
+import time 
 
 from scrapy import signals, Request;                      #pip3 install beautifulsoup4
 
 class AmazonJobsSpider(scrapy.Spider):
     name = "amazonjobs"
 
-    pages_count =100;
+    pages_count =1;
     url_count=10;
 
     job_details=[];
+    start="";
     def start_requests(self):
         urls = [
             'https://www.amazon.jobs/en/search?offset=0&result_limit=10&sort=recent&category[]=software-development&cities[]=Seattle%2C%20Washington%2C%20USA&cities[]=Bellevue%2C%20Washington%2C%20USA&distanceType=Mi&radius=24km&loc_group_id=seattle-metro&latitude=&longitude=&loc_group_id=seattle-metro&loc_query=Greater%20Seattle%20Area%2C%20WA%2C%20United%20States&base_query=Software%20Development&city=&country=&region=&county=&query_options=&',
@@ -28,11 +30,14 @@ class AmazonJobsSpider(scrapy.Spider):
         return spider
 
     def spider_opened(self, spider):
+        self.start=time.time();
         print("--spider---opened");
 
     def spider_closed(self, spider):
         print("------ spider -- closed");
         #print("--------job---------", self.job_details)
+        end_time=time.time()-self.start
+        print(" Total time spent ", end_time);
         print(" job details ",len(self.job_details))
 
     def spider_idle(self, spider):
