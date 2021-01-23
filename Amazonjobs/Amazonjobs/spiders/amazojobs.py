@@ -199,8 +199,9 @@ class AmazonJobsSpider(scrapy.Spider):
         self.url_count=self.url_count+10;
 
         self.upload_data=self.job_details;
-        self.upload_bulk_data();
-        self.job_details=[]
+        if(len(self.upload_data)>150):
+            self.upload_bulk_data();
+            self.job_details=[]
 
         #print("entering follow links")
         if(self.pages_count>0):
