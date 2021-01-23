@@ -20,6 +20,7 @@ class Amazonjobs(scrapy.Spider):
         for section in job_d:
             if(section.h2!=None):
                 if(section.h2.get_text()=='BASIC QUALIFICATIONS'):
+                    
                     print(section.h2.get_text());
-                    print(section.p.get_text())
+                    print(section.p.get_text());
         

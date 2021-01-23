@@ -1,0 +1,6 @@
+[es section]
+es_host = e40171fa76b74198a28b0809b21057c2.us-east-1.aws.found.io
+es_username = elastic
+es_password = g0yj1DgVyn7z423UB1clzfmB
+es_scheme = https
+es_port = 9243
