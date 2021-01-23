@@ -96,7 +96,7 @@ class AmazonJobsSpider(scrapy.Spider):
         print("------------------------obj count------------------------", len(self.job_details))
         url = 'https://www.amazon.jobs/en/search?offset='+str(self.url_count)+'&result_limit=10&sort=recent&category[]=software-development&cities[]=Seattle%2C%20Washington%2C%20USA&cities[]=Bellevue%2C%20Washington%2C%20USA&distanceType=Mi&radius=24km&loc_group_id=seattle-metro&latitude=&longitude=&loc_group_id=seattle-metro&loc_query=Greater%20Seattle%20Area%2C%20WA%2C%20United%20States&base_query=Software%20Development&city=&country=&region=&county=&query_options=&'
         self.url_count=self.url_count+10;
-
+        self.job_details=[]
 
         #print("entering follow links")
         if(self.pages_count>0):
