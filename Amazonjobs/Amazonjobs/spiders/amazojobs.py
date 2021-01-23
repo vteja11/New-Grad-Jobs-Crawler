@@ -12,7 +12,7 @@ from datetime import datetime;
 class AmazonJobsSpider(scrapy.Spider):
     name = "amazonjobs"
 
-    pages_count =100;
+    pages_count =250;
     curr_page=1;
     url_count=10;
 
