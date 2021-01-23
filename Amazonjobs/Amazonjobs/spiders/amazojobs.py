@@ -6,7 +6,7 @@ from scrapy import signals, Request;                      #pip3 install beautifu
 class AmazonJobsSpider(scrapy.Spider):
     name = "amazonjobs"
 
-    pages_count =1;
+    pages_count =100;
     url_count=10;
 
     job_details=[];
@@ -32,7 +32,7 @@ class AmazonJobsSpider(scrapy.Spider):
 
     def spider_closed(self, spider):
         print("------ spider -- closed");
-        print("--------job---------", self.job_details)
+        #print("--------job---------", self.job_details)
         print(" job details ",len(self.job_details))
 
     def spider_idle(self, spider):
