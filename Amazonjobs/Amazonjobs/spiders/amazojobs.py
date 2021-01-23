@@ -32,6 +32,7 @@ class AmazonJobsSpider(scrapy.Spider):
 
     def spider_closed(self, spider):
         print("------ spider -- closed");
+        print("--------job---------", self.job_details)
         print(" job details ",len(self.job_details))
 
     def spider_idle(self, spider):
@@ -118,7 +119,7 @@ class AmazonJobsSpider(scrapy.Spider):
         self.job_details.append(obj);
 
         #print("- ---- - entering job description")
-        return "entering job description";
+        return {"onj":"entering job description"};
 
 
         
